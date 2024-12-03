@@ -1,0 +1,1 @@
+This is where multi-container Docker applications are stored.

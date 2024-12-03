@@ -1,0 +1,20 @@
+services:
+  backend:
+    build:
+      context: ./backend
+# you can specify a custom Dockerfile name or specify the name explicitly
+#     dockerfile: backend.Dockerfile
+#     dockerfile: Dockerfile
+    tty: true
+    stdin_open: true
+    depends_on:
+      - database
+      - cache
+  database:
+    build:
+      context: ./database
+  cache:
+    image: redis
+  web-server:
+    build:
+      context: ./web-server
