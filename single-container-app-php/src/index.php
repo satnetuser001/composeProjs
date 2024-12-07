@@ -3,7 +3,7 @@
 $counter = 1;
 
 while (true) {
-    echo "iteration No. $counter in an infinite loop\n";
+    echo "Infinite loop, iteration No. $counter\n";
     $counter++;
     sleep(10);
 }
