@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "5bbc2030-edd9-4a8f-a697-8731478710e6",
+		"name": "nginx-php1-php2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31098902"
+	},
+	"item": [
+		{
+			"name": "127.0.0.1:8090[php1.example]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "host",
+						"value": "php1.example",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:8090",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8090"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:8090[php2.example]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "host",
+						"value": "php2.example",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:8090",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8090"
+				}
+			},
+			"response": []
+		}
+	]
+}

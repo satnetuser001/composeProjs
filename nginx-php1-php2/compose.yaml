@@ -1,0 +1,33 @@
+name: n-p1-p2
+
+services:
+  php1:
+    build:
+      context: ./php1
+    container_name: n-p1-p2-php1
+    networks:
+      - nginx-php1-php2
+
+  php2:
+    build:
+      context: ./php2
+    container_name: n-p1-p2-php2
+    networks:
+      - nginx-php1-php2
+
+  nginx:
+    build:
+      context: ./nginx
+    container_name: n-p1-p2-nginx
+    ports:
+      - "8090:80"
+    depends_on:
+      - php1
+      - php2
+    networks:
+      - nginx-php1-php2
+
+networks:
+  nginx-php1-php2:
+    name: nginx-php1-php2
+    driver: bridge
