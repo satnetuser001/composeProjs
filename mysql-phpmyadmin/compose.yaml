@@ -1,0 +1,28 @@
+services:
+  mysql:
+    image: mysql
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: /secrets/mysql_root_password
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      - ./secrets/mysql_root_password.txt:/secrets/mysql_root_password:ro
+    networks:
+      - mysql-phpmyadmin
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql
+    ports:
+      - "1600:80"
+    networks:
+      - mysql-phpmyadmin
+    depends_on:
+      - mysql
+
+networks:
+  mysql-phpmyadmin:
+    name: mysql-phpmyadmin
+    driver: bridge
