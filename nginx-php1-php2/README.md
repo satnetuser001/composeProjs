@@ -4,6 +4,7 @@ Request from the client, it is suggested to use Postman, is processed by nginx w
 transmitted according to the FastCGI protocol in PHP-FPM through docker network as shown in
 the diagram.
 
+<pre>
    +-----------------+
    |     client      |
    |     Postman     |
@@ -27,8 +28,7 @@ the diagram.
 | web app php1 |     | web app php2 |     | web app phpN |
 | container    |     | container    |     | container    |
 +--------------+     +--------------+     +--------------+
-
-
+</pre>
 
 To run execute in current directory:
 docker compose up -d
